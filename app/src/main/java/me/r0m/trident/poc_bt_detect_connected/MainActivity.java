@@ -72,10 +72,13 @@ public class MainActivity extends AppCompatActivity {
             if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
                 //Do something if connected
                 Log.d("BT", "Device connected");
-                ((TextView) findViewById(R.id.btConnectStatusTextView)).setText("Connected: \n\t" + deviceName + "\n\t" + deviceHardwareAddress);
+                ((TextView) findViewById(R.id.btConnectStatusTextView)).setText("Connected: \n\t" +
+                        "Device Name: " + deviceName + "\n\t" +
+                        "Hardware Address:" + deviceHardwareAddress);
             } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
                 //Do something if disconnected
                 Log.d("BT", "Device disconnected");
+                ((TextView) findViewById(R.id.btConnectStatusTextView)).setText("Disconnected");
             }
         }
     };
